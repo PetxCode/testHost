@@ -8,6 +8,10 @@ const port = process.env.PORT;
 app.use(cors());
 app.use(express.json());
 
+app.get("/", (req, res) => {
+res.status(200).json({message:"This is the homepage!"})
+})
+
 app.use("/api/user", require("./router/userRouter"));
 app.use("/api/post", require("./router/postRouter"));
 app.use("/api/definition", require("./router/likeRouter"));
